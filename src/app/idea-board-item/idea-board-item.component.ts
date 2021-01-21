@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-idea-board-item',
@@ -9,9 +9,17 @@ export class IdeaBoardItemComponent implements OnInit {
 
   note: string = null;
   
+  @Input() left:number;
+  @Input() top:number;
+  @Input() height:number;
+  @Input() width:number;
+  
   constructor() { }
 
   ngOnInit(): void {
+  }
+  onCompDrag(event){
+    console.log(event);
   }
 
 }

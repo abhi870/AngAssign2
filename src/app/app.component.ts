@@ -9,12 +9,11 @@ import * as EventEmitter from 'events';
 export class AppComponent {
   @Output() addSectionEvent = new EventEmitter();
   
-  sectionName = null;
+  sections = [];
   onHit(name: string) {
     this.addSectionEvent.emit(name);
   }
   addNew(event){
-    console.log(event);
-    this.sectionName = event;
+    this.sections.push(event);
   }
 }

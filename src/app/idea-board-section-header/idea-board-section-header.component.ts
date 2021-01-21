@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-idea-board-section-header',
@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IdeaBoardSectionHeaderComponent implements OnInit {
 
-  sectionName:string = null;
+  @Input() sectionName: string = null;
   constructor() { }
 
   ngOnInit(): void {

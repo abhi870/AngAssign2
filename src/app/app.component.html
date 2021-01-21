@@ -1,11 +1,14 @@
 <div class="container">
   <app-add-section-board (sectionAddEvent)='addNew($event)'></app-add-section-board>
-  <!-- <ul>
+  <ul>
     <li *ngFor='let section of sections'>
-      <app-idea-board-section-header [sectionName]='sectionName'></app-idea-board-section-header>
+      <app-idea-board-section-header [sectionName]='section'></app-idea-board-section-header>
     </li>
-  </ul> -->
-  <div>
-    {{sectionName}}
-  </div>
+  </ul>
+
+  <app-idea-board-item [left]='300'
+  [top]='300'
+  [height]='150'
+  [width]=300></app-idea-board-item>
+  
 </div>
