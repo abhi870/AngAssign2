@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Output } from '@angular/core';
+import * as EventEmitter from 'events';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'assignment2';
+  @Output() addSectionEvent = new EventEmitter();
+  
+  sectionName = null;
+  onHit(name: string) {
+    this.addSectionEvent.emit(name);
+  }
+  addNew(event){
+    console.log(event);
+    this.sectionName = event;
+  }
 }
