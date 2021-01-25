@@ -4,9 +4,10 @@
   <div class="sections">
     <div class="section" *ngFor='let section of sections'>
       <app-idea-board-section-header [sectionName]='section'></app-idea-board-section-header>
-      <div class="sectionBody" cdkDropList (cdkDropListDropped)="drop($event)"></div>
+      <div class="vr">&nbsp;</div>
     </div>
   </div>
-<div cdkDrag>hello</div>
+  <!-- <div cdkDrag>hello</div> -->
+  <app-idea-board-item></app-idea-board-item>
 
 </div>

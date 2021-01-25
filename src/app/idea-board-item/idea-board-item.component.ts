@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import {} from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-idea-board-item',

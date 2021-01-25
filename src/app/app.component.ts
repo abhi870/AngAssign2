@@ -9,21 +9,21 @@ import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 })
 export class AppComponent {
   @Output() addSectionEvent = new EventEmitter();
-  
-  
+
+
   sections = [];
+  notes = [];
   onHit(name: string) {
     this.addSectionEvent.emit(name);
   }
-  addNew(event){
-    this.sections.push(event);
+  addNew(event) {
+    if (!this.sections.includes(event))
+      this.sections.push(event);
   }
-  onMouseDown(event){
+  onMouseDown(event) {
     console.log(event);
     console.log(event.target.parentElement.id);
   }
 
-  drop(event: CdkDragDrop<any[]>){
-    moveItemInArray(this.sections, event.previousIndex, event.currentIndex);
-  }
+
 }
