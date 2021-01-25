@@ -8,6 +8,7 @@ import { IdeaBoardSectionHeaderComponent } from './idea-board-section-header/ide
 import { IdeaBoardItemComponent } from './idea-board-item/idea-board-item.component';
 import { AddSectionBoardComponent } from './add-section-board/add-section-board.component';
 import { DragDrop, DragDropModule } from '@angular/cdk/drag-drop';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { DragDrop, DragDropModule } from '@angular/cdk/drag-drop';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    DragDropModule
+    DragDropModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

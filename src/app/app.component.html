@@ -1,13 +1,17 @@
 <div class="container">
   <app-add-section-board (sectionAddEvent)='addNew($event)'></app-add-section-board>
 
+  <button class="addNoteButton"(click)="addNote($event)">AddNote</button>
   <div class="sections">
     <div class="section" *ngFor='let section of sections'>
       <app-idea-board-section-header [sectionName]='section'></app-idea-board-section-header>
-      <div class="vr">&nbsp;</div>
     </div>
   </div>
+  
   <!-- <div cdkDrag>hello</div> -->
-  <app-idea-board-item></app-idea-board-item>
+  
+  <div #boardBody *ngFor='let note of notes'>
+    <app-idea-board-item [note]='note' (closeEmitter)='closeNote($event)'></app-idea-board-item>
+  </div>
 
-</div>
+</div>  

@@ -1,5 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
-import {} from '@angular/cdk/drag-drop';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-idea-board-item',
@@ -8,20 +8,25 @@ import {} from '@angular/cdk/drag-drop';
 })
 export class IdeaBoardItemComponent implements OnInit {
 
-  note: string = null;
-  
-  @Input() left:number;
-  @Input() top:number;
-  @Input() height:number;
-  @Input() width:number;
+  @Input() note: string = null;
+  changedNote = null;
+
+  @Output() closeEmitter = new EventEmitter();
+  @Input() left: number;
+  @Input() top: number;
+  @Input() height: number;
+  @Input() width: number;
 
   constructor() { }
 
   ngOnInit(): void {
   }
-  onCompDrag(event){
-    console.log(event);
+
+
+  onClose(event) {
+    let responseArr = [];
+    responseArr.push(this.note);
+    responseArr.push(this.changedNote);
+    this.closeEmitter.emit(responseArr);
   }
-
-
 }

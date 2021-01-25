@@ -1,3 +1,7 @@
-<textarea cdkDrag class="note" [style.height.px]='height' [style.width.px]='width'
-    [style.transform]="'translate3d(' +left+'px,'+top+'px,'+'0px)'">
+<div cdkDrag>
+    <button (click)="onClose($event)"><i class="fal fa-window-close"></i></button>
+    <textarea class="note" [style.height.px]='height' [style.width.px]='width'
+        [style.transform]="'translate3d(' +left+'px,'+top+'px,'+'0px)'" [(ngModel)]="changedNote"> 
+       
 </textarea>
+</div>
