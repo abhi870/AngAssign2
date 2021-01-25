@@ -1,14 +1,12 @@
 <div class="container">
   <app-add-section-board (sectionAddEvent)='addNew($event)'></app-add-section-board>
-  <ul>
-    <li *ngFor='let section of sections'>
-      <app-idea-board-section-header [sectionName]='section'></app-idea-board-section-header>
-    </li>
-  </ul>
 
-  <app-idea-board-item [left]='300'
-  [top]='300'
-  [height]='150'
-  [width]=300></app-idea-board-item>
-  
+  <div class="sections">
+    <div class="section" *ngFor='let section of sections'>
+      <app-idea-board-section-header [sectionName]='section'></app-idea-board-section-header>
+      <div class="sectionBody" cdkDropList (cdkDropListDropped)="drop($event)"></div>
+    </div>
+  </div>
+<div cdkDrag>hello</div>
+
 </div>

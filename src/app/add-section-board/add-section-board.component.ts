@@ -15,6 +15,7 @@ export class AddSectionBoardComponent implements OnInit {
   }
 
   addNewSection(name:string){
+    if(name.length!=0)
     this.sectionAddEvent.emit(name);
   }
 

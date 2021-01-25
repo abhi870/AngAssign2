@@ -7,6 +7,7 @@ import { IdeaBoardSectionGlobalBodyComponent } from './idea-board-section-global
 import { IdeaBoardSectionHeaderComponent } from './idea-board-section-header/idea-board-section-header.component';
 import { IdeaBoardItemComponent } from './idea-board-item/idea-board-item.component';
 import { AddSectionBoardComponent } from './add-section-board/add-section-board.component';
+import { DragDrop, DragDropModule } from '@angular/cdk/drag-drop';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { AddSectionBoardComponent } from './add-section-board/add-section-board.
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    DragDropModule
   ],
   providers: [],
   bootstrap: [AppComponent]

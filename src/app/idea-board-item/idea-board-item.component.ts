@@ -13,7 +13,7 @@ export class IdeaBoardItemComponent implements OnInit {
   @Input() top:number;
   @Input() height:number;
   @Input() width:number;
-  
+
   constructor() { }
 
   ngOnInit(): void {
@@ -21,5 +21,6 @@ export class IdeaBoardItemComponent implements OnInit {
   onCompDrag(event){
     console.log(event);
   }
+
 
 }
